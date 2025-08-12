@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Cornerstone DICOM Viewer</title>
+
+  <!-- Basic styles for the viewer -->
+  <style>
+    #dicomImage {
+      width: 512px;
+      height: 512px;
+      border: 1px solid black;
+      background-color: black;
+    }
+  </style>
+</head>
+<body>
+  <h1>Simple Cornerstone DICOM Viewer</h1>
+
+  <!-- Container where the DICOM image will be rendered -->
+  <div id="dicomImage"></div>
+
+  <!-- Load required cornerstone and dependencies from CDN -->
+  <script src="https://unpkg.com/cornerstone-core@2.5.0/dist/cornerstone.min.js"></script>
+  <script src="https://unpkg.com/cornerstone-wado-image-loader@3.1.1/dist/cornerstoneWADOImageLoader.min.js"></script>
+  <script src="https://unpkg.com/dicom-parser@1.8.6/dist/dicomParser.min.js"></script>
+
+  <script>
+    // === Initialization ===
+
+    // Get the element where the DICOM image will be displayed
+    const element = document.getElementById('dicomImage');
+
+    // Enable Cornerstone on the target element
+    cornerstone.enable(element);
+
+    // Configure the WADO Image Loader to use the cornerstone instance
+    cornerstoneWADOImageLoader.external.cornerstone = cornerstone;
+
+    cornerstoneWADOImageLoader.configure({
+      beforeSend: function(xhr) {
+        // This function is called before sending the request.
+        // You can add custom headers here if needed.
+      }
+    });
+
+    // === Load and display the DICOM image ===
+
+    // Specify the image ID (WADO URI pointing to your DICOM file on local server)
+    const imageId = 'wadouri:/IMG-0001-00001.dcm';
+
+    // Load the image asynchronously
+    cornerstone.loadImage(imageId).then(function(image) {
+      // Once loaded, display the image inside the enabled element
+      cornerstone.displayImage(element, image);
+    }).catch(function(err) {
+      // Log and alert if there is an error loading the image
+      console.error('Error loading image:', err);
+      alert('Error loading image: ' + err);
+    });
+  </script>
+</body>
+</html>
