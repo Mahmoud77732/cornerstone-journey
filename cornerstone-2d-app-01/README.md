@@ -4,6 +4,12 @@ A minimal web-based DICOM viewer built using [Cornerstone Core](https://cornerst
 
 This project demonstrates how to load and display DICOM images directly in the browser using CDN-hosted libraries.
 
+I used Cornerstone2D (cornerstone-core v2) — not the new Cornerstone3D API.
+   so no init calls, no rendering engine,
+
+If we used Cornerstone3D then we need: Rendering Engine + coreInit = 
+   Cornerstone3D (more modern, more complex, supports 3D, multiple viewports)
+
 ---
 
 ## ✨ Features
