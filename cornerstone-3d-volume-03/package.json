@@ -1,0 +1,13 @@
+{
+  "dependencies": {
+    "@cornerstonejs/core": "^3.32.10",
+    "@cornerstonejs/dicom-image-loader": "^3.32.10",
+    "@cornerstonejs/nifti-volume-loader": "^3.32.10",
+    "@cornerstonejs/tools": "^3.32.10",
+    "@icr/polyseg-wasm": "^0.4.0",
+    "vite": "^7.1.2"
+  },
+  "devDependencies": {
+    "@originjs/vite-plugin-commonjs": "^1.0.3"
+  }
+}

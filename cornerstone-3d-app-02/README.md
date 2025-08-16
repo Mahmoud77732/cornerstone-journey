@@ -37,9 +37,7 @@ project-folder/
 ├── index.html             # HTML page with viewer container
 ├── main.js                # Cornerstone3D viewer code
 ├── vite.config.ts         # Vite configuration
-|── public/ 
-├──   IMG-0001-00001.dcm   # Example DICOM file (replace with your own)
-|──   CTImage.dcm
+├── IMG-0001-00001.dcm     # Example DICOM file (replace with your own)
 └── README.md              # Documentation
 ```
 
