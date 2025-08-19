@@ -76,13 +76,13 @@ async function run() {
     {
       viewportId: viewportId1,
       element: element1,
-      type: Enums.ViewportType.ORTHOGRAPHIC,
+      type: ViewportType.ORTHOGRAPHIC,
       defaultOptions: { orientation: Enums.OrientationAxis.AXIAL },
     },
     {
       viewportId: viewportId2,
       element: element2,
-      type: Enums.ViewportType.ORTHOGRAPHIC,
+      type: ViewportType.ORTHOGRAPHIC,
       defaultOptions: { orientation: Enums.OrientationAxis.SAGITTAL },
     },
   ];
